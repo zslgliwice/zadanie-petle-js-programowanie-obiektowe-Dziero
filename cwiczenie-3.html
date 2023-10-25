@@ -18,13 +18,28 @@
 	<div id="wynik"></div>
 	
 	<script>
+		function ktora_cwiartka() {
+			const xInputElement = document.getElementById('x');
+			const yInputElement = document.getElementById('y');
+			const wynikElement = document.getElementById('wynik');
 	
-		function ktora_cwiartka()
-		{
-			
-			
+			const x = parseFloat(xInputElement.value);
+			const y = parseFloat(yInputElement.value);
+	
+			if (x == 15 && y == 96){
+				wynikElement.textContent = 'René Descartes, łac. Renatus Cartesius, po polsku Kartezjusz, (ur. 31 marca 1596 w La Haye en Touraine, zm. 11 lutego 1650 w Sztokholmie) – francuski uczony: matematyk, fizyk i filozof, jeden z najwybitniejszych intelektualistów XVII wieku, uznawany również za ojca filozofii nowożytnej.'
+			} else if(x == 0 && y == 0){
+				wynikElement.textContent = 'Początek układu współrzędnych'
+			} else if (x > 0 && y > 0) {
+				wynikElement.textContent = '1 Ćwiartka';
+			} else if (x < 0 && y > 0) {
+				wynikElement.textContent = '2 Ćwiartka';
+			} else if(x < 0 && y < 0){
+				wynikElement.textContent = '3 Ćwiartka';
+			} else if(x > 0 && y < 0){
+				wynikElement.textContent = '4 Ćwiartka'
+			}
 		}
-
 	</script>
 
 </body>
