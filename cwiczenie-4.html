@@ -23,11 +23,32 @@
 	
 		function matematyka()
 		{
-			var a = document.getElementById('a').value;
-			var b = document.getElementById('b').value;
-			var c = document.getElementById('c').value;
+			const a = parseFloat(document.getElementById('a').value);
+			const b = parseFloat(document.getElementById('b').value);
+			const c = parseFloat(document.getElementById('c').value);
 			
+			let wynikDiv = document.getElementById('wynik');
+			wynikDiv.innerHTML = ''; 
 			
+			let smallest = Math.min(a, b, c);
+			wynikDiv.innerHTML += '<p>Najmniejsza liczba: ' + smallest + '</p>';
+			
+			let biggest = Math.max(a, b, c);
+			wynikDiv.innerHTML += '<p>Największa liczba: ' + biggest + '</p';
+			
+			let certainA = Math.abs(a);
+			let certainB = Math.abs(b);
+			let certainC = Math.abs(c);
+			wynikDiv.innerHTML += '<p>Wartość bezwzględna a: ' + certainA + '</p>';
+			wynikDiv.innerHTML += '<p>Wartość bezwzględna b: ' + certainB + '</p>';
+			wynikDiv.innerHTML += '<p>Wartość bezwzględna c: ' + certainC + '</p>';
+			
+			let evenA = a % 2 === 0 ? 'Tak' : 'Nie';
+			let evenB = b % 2 === 0 ? 'Tak' : 'Nie';
+			let evenC = c % 2 === 0 ? 'Tak' : 'Nie';
+			wynikDiv.innerHTML += '<p>Liczba a jest parzysta? ' + evenA + '</p>';
+			wynikDiv.innerHTML += '<p>Liczba b jest parzysta? ' + evenB + '</p>';
+			wynikDiv.innerHTML += '<p>Liczba c jest parzysta? ' + evenC + '</p>';
 		}
 
 	</script>
