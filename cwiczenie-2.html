@@ -20,11 +20,25 @@
 	
 	<script>
 	
-		function sprawdz()
-		{
+	function sprawdz() {
+			const nameElement = document.getElementById('imie');
+			const yearElement = document.getElementById('wiek');
+			const resultElement = document.getElementById('wynik');
 			
 			
+			if (yearElement.value < 16) {
+				resultElement.textContent = 'Nie może wziąć udziału w seansie';
+		 } else if (yearElement.value >= 16 && yearElement.value <= 17) {
+				resultElement.textContent = 'Może wziąć udział, jeśli jest z opiekunem - opłata: 12zł';
+			} else if (yearElement.value >= 18) {
+				if (nameElement.value === 'Brad' || nameElement.value === 'Morgan') {
+					resultElement.textContent = 'Może wziąć udział - wejscie za darmo';
+				} else {
+					resultElement.textContent = 'Może wziąć udział - opłata: 18zł';
+				}
+			}
 		}
+
 
 	</script>
 
